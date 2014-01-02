@@ -1,0 +1,16 @@
+PODS:
+  - MagicalRecord (2.2)
+  - NSDate-Escort (1.2.2)
+  - TableViewAgent (0.2.3)
+
+DEPENDENCIES:
+  - MagicalRecord
+  - NSDate-Escort
+  - TableViewAgent
+
+SPEC CHECKSUMS:
+  MagicalRecord: b1fc46c99a9749fe7fe7e6f43a89b62ef5201933
+  NSDate-Escort: 67a92b0e8de0a69f974f3147170a367bc312a417
+  TableViewAgent: a3ef0fc18c4ac04ba7b55d1f6998277b09a23e85
+
+COCOAPODS: 0.28.0
