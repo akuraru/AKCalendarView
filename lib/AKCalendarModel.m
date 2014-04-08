@@ -11,8 +11,11 @@
 
 #define kOneDay 86400
 
+@interface AKCalendarModel ()
+@property (nonatomic, strong) NSDate *firstDay;
+@end
+
 @implementation AKCalendarModel {
-    NSDate *firstDay;
     NSCalendar *calendar;
 }
 - (id)init {
@@ -32,11 +35,11 @@
 }
 
 - (void)updateFirstDay {
-    NSDateComponents *comps = [self components:_currentDate];
+    NSDateComponents *comps = [self components:self.currentDate];
     [comps setWeekOfMonth:1];
     [comps setWeekday:1];
 
-    firstDay = [calendar dateFromComponents:comps];
+    self.firstDay = [calendar dateFromComponents:comps];
 }
 
 - (NSDateComponents *)components:(NSDate *)date {
@@ -45,10 +48,10 @@
 }
 
 - (NSDate *)day:(int)index {
-    return [firstDay dateByAddingDays:index];
+    return [self.firstDay dateByAddingDays:index];
 }
 - (NSInteger)indexForDate:(NSDate *)day {
-    return [firstDay daysAfterDate:day];
+    return [self.firstDay daysAfterDate:day];
 }
 
 - (void)nextMonth {
@@ -62,15 +65,15 @@
 }
 
 - (void)updateDate:(NSInteger)month {
-    _currentDate = [_currentDate dateByAddingMonths:month];
+    self.currentDate = [self.currentDate dateByAddingMonths:month];
 }
 
 - (NSInteger)beforeMonthDays {
-    return [self betweenDaysWithDate:firstDay after:self.currentDate];
+    return [self betweenDaysWithDate:self.firstDay after:self.currentDate];
 }
 
 - (NSInteger)afterMonthStartDay {
-    return [self betweenDaysWithDate:firstDay after:[self currentNextMonth]];
+    return [self betweenDaysWithDate:self.firstDay after:[self currentNextMonth]];
 }
 
 - (NSInteger)betweenDaysWithDate:(NSDate *)date after:(NSDate *)after {
@@ -78,14 +81,18 @@
 }
 
 - (NSDate *)currentNextMonth {
-    return [_currentDate dateByAddingMonths:1];
+    return [self.currentDate dateByAddingMonths:1];
 }
 
 - (NSInteger)today {
-    return [firstDay daysBeforeDate:[NSDate date]];
+    return [self.firstDay daysBeforeDate:[NSDate date]];
 }
 
 - (NSInteger)currentIndex {
     return [self beforeMonthDays];
+}
+
+- (NSInteger)indexOfDay:(NSDate *)date {
+    return [self.firstDay daysBeforeDate:date];
 }
 @end

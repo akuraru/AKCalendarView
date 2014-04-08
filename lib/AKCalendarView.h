@@ -25,6 +25,7 @@
 
 - (AKCalendarCell *)dequeueReusableCellForIndex:(NSInteger)index;
 - (id)dequeueReusableLabelForIndex:(int)i;
+- (NSNumber *)selectedIndex;
 @end
 
 @protocol AKCalendarViewDelegate <NSObject>

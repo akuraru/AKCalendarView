@@ -10,7 +10,7 @@
 
 @interface AKCalendarModel : NSObject
 
-@property(nonatomic) NSDate *currentDate;
+@property(nonatomic, strong) NSDate *currentDate;
 
 - (NSDate *)day:(int)index;
 
@@ -24,4 +24,5 @@
 
 - (NSInteger)today;
 - (NSInteger)currentIndex;
+- (NSInteger)indexOfDay:(NSDate *)date;
 @end

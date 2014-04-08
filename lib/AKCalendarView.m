@@ -170,4 +170,8 @@
         return nil;
     }
 }
+
+- (NSNumber *)selectedIndex {
+    return (selectedButton) ? @(selectedButton.tag) : nil;
+}
 @end
