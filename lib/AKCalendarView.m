@@ -31,7 +31,6 @@
 
 - (void)setDelegate:(id <AKCalendarViewDelegate>)delegate {
     _delegate = delegate;
-    [self updateDays];
 }
 
 - (void)updateDays {
