@@ -3,7 +3,7 @@
 
 @implementation AKCalendarCell
 
-+ (AKCalendarCell *)create {
++ (instancetype)create {
     return [self buttonWithType:UIButtonTypeCustom];
 }
 + (id)buttonWithType:(UIButtonType)buttonType {

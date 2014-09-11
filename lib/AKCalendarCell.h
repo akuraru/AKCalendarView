@@ -4,8 +4,8 @@
     BOOL _inCurrentMonth;
 }
 
-@property(nonatomic) NSDate *date;
+@property(strong, nonatomic) NSDate *date;
 
 - (void)update:(NSDate *)date inCurrentMonth:(BOOL)month;
-+ (AKCalendarCell *)create;
++ (instancetype)create;
 @end
