@@ -37,7 +37,7 @@
 }
 
 - (void)selectedDay:(NSInteger)index {
-    NSLog(@"%d", index);
+    NSLog(@"%zd", index);
 }
 - (AKCalendarCell *)calendarView:(AKCalendarView *)calendarView cellForIndex:(NSInteger)index {
     AKCalendarCell *calendarButton = [calendarView dequeueReusableCellForIndex:index];

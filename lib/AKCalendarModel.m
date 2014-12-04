@@ -47,7 +47,7 @@
     return [calendar components:unitFlags fromDate:date];
 }
 
-- (NSDate *)day:(int)index {
+- (NSDate *)day:(NSInteger)index {
     return [self.firstDay dateByAddingDays:index];
 }
 - (NSInteger)indexForDate:(NSDate *)day {

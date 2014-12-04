@@ -146,7 +146,7 @@
     }
 }
 
-- (id)dequeueReusableLabelForIndex:(int)i {
+- (id)dequeueReusableLabelForIndex:(NSInteger)i {
     if (i < weeks.count) {
         return weeks[i];
     } else {

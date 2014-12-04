@@ -24,7 +24,7 @@
 - (CGSize)cellSize;
 
 - (AKCalendarCell *)dequeueReusableCellForIndex:(NSInteger)index;
-- (id)dequeueReusableLabelForIndex:(int)i;
+- (id)dequeueReusableLabelForIndex:(NSInteger)i;
 - (NSNumber *)selectedIndex;
 @end
 

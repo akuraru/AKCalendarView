@@ -12,7 +12,7 @@
 
 @property(nonatomic, strong) NSDate *currentDate;
 
-- (NSDate *)day:(int)index;
+- (NSDate *)day:(NSInteger)index;
 
 - (void)nextMonth;
 
